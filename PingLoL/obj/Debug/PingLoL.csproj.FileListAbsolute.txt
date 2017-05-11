@@ -1,0 +1,14 @@
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\bin\Debug\PingLoL.exe.config
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\bin\Debug\PingLoL.exe
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\bin\Debug\PingLoL.pdb
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.csprojResolveAssemblyReference.cache
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\MainWindow.g.cs
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\App.g.cs
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL_MarkupCompile.cache
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL_MarkupCompile.lref
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\MainWindow.baml
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.g.resources
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.Properties.Resources.resources
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.csproj.GenerateResource.Cache
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.exe
+c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.pdb
