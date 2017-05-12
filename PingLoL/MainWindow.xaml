@@ -7,12 +7,27 @@
         mc:Ignorable="d"
         Title="Ping LoL" Height="350" Width="525">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="18">
-            Hola!, Bienvenido a PingLoL.
+        <TextBlock HorizontalAlignment="Center" FontSize="18" Margin="131,0,131.4,275.8" Width="256">
+            ' Hola!, Bienvenido a PingLoL.
         </TextBlock>
-        <TextBlock FontSize="12" Margin="30, 50">
+        
+        <TextBlock FontSize="12" Margin="30,50,30.4,244.8">
            Escoge servidor:
         </TextBlock>
+        <TextBlock FontSize="12" Margin="30,140,417.4,153.8">
+           Primer Ping:
+        </TextBlock>
+        
+        <TextBlock FontSize="12" Margin="30,172,340.4,126.8">
+           Promedio de ping (8 total):
+        </TextBlock>
+        <TextBlock FontSize="12" Margin="30,204,417.4,90.8">
+           Mas alto:
+        </TextBlock>
+        <TextBlock FontSize="12" Margin="30,234,417.4,60.8">
+            Mas mejor:
+        </TextBlock>
+
         <ComboBox Height="23"  x:Name="cBox" Loaded="ComboBox_Loaded"
             SelectionChanged="ComboBox_SelectionChanged" Margin="30,77,403.4,213.8">
             <!--<ComboBox.ItemTemplate>
@@ -25,7 +40,12 @@
             Iniciar
         </Button>
 
-        <TextBlock x:Name="tBlockMS" Margin="146,133,304.4,159.8" FontSize="18" Loaded="TextBlock_Loaded" >0 ms</TextBlock>
+        <TextBlock x:Name="tBlockMS" Margin="194,133,256.4,159.8" FontSize="18" Loaded="TextBlock_Loaded" >0 ms</TextBlock>
+        <TextBlock x:Name="tBlockAvg" Margin="194,166,256.4,126.8" FontSize="18" RenderTransformOrigin="0.694,0.909"> 0 ms </TextBlock>
+        <TextBlock x:Name="tBlockMax" Margin="194,199,256.4,90.8" FontSize="18"> 0 ms</TextBlock>
+        <TextBlock x:Name="tBlockMin" Margin="194,232,256.4,60.8" FontSize="18"> 0 ms</TextBlock>
+        
+        
 
     </Grid>
 
