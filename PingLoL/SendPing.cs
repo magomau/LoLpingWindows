@@ -32,7 +32,7 @@ namespace PingLoL
                 if (pingBool)
                 {
                     //ping = pingBool.ToString() + " " + reply.RoundtripTime.ToString() + "ms";
-                    ping = reply.RoundtripTime.ToString() + "ms";
+                    ping = reply.RoundtripTime.ToString() + " " + "ms";
                     //Console.WriteLine("Direccion: {0}", reply.Address.ToString());
                     //Console.WriteLine("RoundTrip time: {0}", reply.RoundtripTime + "ms"); // tiempo de respuesta mas conocido como "MS"
                     //Console.WriteLine("Time to live: {0}", reply.Options.Ttl);
@@ -48,6 +48,28 @@ namespace PingLoL
 
 
             return ping;
+        }
+
+        public int ColorType(string ping)
+        {
+            int color = 0;
+            int numer = 0;
+            string[] separate;
+
+            separate = ping.Split(' ');
+            numer = Int32.Parse(separate[0]);
+            if (numer <= 70)
+            {
+                color = 1;//"#36ff33"; //green
+            }
+            else if ((numer > 70) && (numer <= 160))
+            {
+                color = 2; //"#ff7433"; //orange
+            }
+            else {
+                color = 3; //"#f90f0f"; //red
+            }
+            return color;
         }
     }
 }

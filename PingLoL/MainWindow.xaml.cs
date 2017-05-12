@@ -64,7 +64,25 @@ namespace PingLoL
 
             SendPing SP = new SendPing(Region);
             Ping = SP.SenderPing(Region);
+            int color = SP.ColorType(Ping);
+           // this.tBlockMS.Foreground = Brushes.DarkGreen;
+            switch (color)
+            {
+                case 1:
+                    this.tBlockMS.Foreground = Brushes.DarkGreen;
+                    break;
+                case 2:
+                    this.tBlockMS.Foreground = Brushes.Orange;
+                    break;
+                case 3:
+                    this.tBlockMS.Foreground = Brushes.Red;
+                    break;
+                default:
+                    this.tBlockMS.Foreground = Brushes.DarkGreen;
+                    break;
+            }
             this.tBlockMS.Text = Ping;
+            
 
         }
 

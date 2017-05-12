@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PingLoL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Ping LoL" Height="350" Width="525">
     <Grid>
         <TextBlock HorizontalAlignment="Center" FontSize="18">
             Hola!, Bienvenido a PingLoL.
         </TextBlock>
-        <ComboBox Height="30"  x:Name="cBox" Loaded="ComboBox_Loaded"
-            SelectionChanged="ComboBox_SelectionChanged" Margin="31,76,402.4,214.8">
+        <TextBlock FontSize="12" Margin="30, 50">
+           Escoge servidor:
+        </TextBlock>
+        <ComboBox Height="23"  x:Name="cBox" Loaded="ComboBox_Loaded"
+            SelectionChanged="ComboBox_SelectionChanged" Margin="30,77,403.4,213.8">
             <!--<ComboBox.ItemTemplate>
             <DataTemplate>
                 <Button Content="Click" Click="Button_Click" />
