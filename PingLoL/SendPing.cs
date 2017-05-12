@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace PingLoL
 {
@@ -75,7 +76,7 @@ namespace PingLoL
         public string[] SendersPings(string region, int numPing)
         {
             bool pingBool = false;
-            string ping = "0 ms";
+           // string ping = "0 ms";
             string[] PingTotal = new string[3];
             string IpAddress;
             int[] PingsMC = new int[numPing];
@@ -92,6 +93,7 @@ namespace PingLoL
                     {
                         string algo = reply.RoundtripTime.ToString();
                         PingsMC[i] = Int32.Parse(algo);
+                        Thread.Sleep(600);
                     }
                     else
                         i--;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -66,6 +67,7 @@ namespace PingLoL
             Ping = SP.SenderPing(Region);
             string[] PingsTotal = SP.SendersPings(Region, numPing);
             this.tBlockMS.Text = Ping;
+            //Thread.Sleep(3000);
             this.tBlockAvg.Text = PingsTotal[0] + " ms";
             this.tBlockMax.Text = PingsTotal[1] + " ms";
             this.tBlockMin.Text = PingsTotal[2] + " ms";
@@ -92,12 +94,15 @@ namespace PingLoL
             {
                 case 1:
                     this.tBlockAvg.Foreground = Brushes.DarkGreen;
+                    this.tBlockReason.Text = " Tienes exelente respuesta del servidor (Sin lag, jugable).";
                     break;
                 case 2:
                     this.tBlockAvg.Foreground = Brushes.Orange;
+                    this.tBlockReason.Text = " Tienes media respuesta del servidor (Poco de lag, jugable).";
                     break;
                 case 3:
                     this.tBlockAvg.Foreground = Brushes.Red;
+                    this.tBlockReason.Text = " Tienes pesima respuesta del servidor (Mucho lag, no jugable).";
                     break;
                 default:
                     this.tBlockAvg.Foreground = Brushes.DarkGreen;
@@ -141,6 +146,27 @@ namespace PingLoL
             // Get TextBlock reference.
             var block = sender as TextBlock;
             block.Text = MS ;
+        }
+
+        private void Button_ClickInfo(object sender, RoutedEventArgs e)
+        {
+            Info info = new Info();
+            info.Owner = this;
+            AplicarEfecto(this);
+            info.ShowDialog();
+            QuitarEfecto(this);
+        }
+
+        private void AplicarEfecto(Window win)
+        {
+            var objBlur = new System.Windows.Media.Effects.BlurEffect();
+            objBlur.Radius = 5;
+            win.Effect = objBlur;
+        }
+
+        private void QuitarEfecto(Window win)
+        {
+            win.Effect = null;
         }
     }  
 }

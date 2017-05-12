@@ -12,3 +12,5 @@ c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\o
 c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.csproj.GenerateResource.Cache
 c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.exe
 c:\users\mauro\onedrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\PingLoL.pdb
+C:\Users\mauro\OneDrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\Info.g.cs
+C:\Users\mauro\OneDrive\documentos\visual studio 2017\Projects\PingLoL\PingLoL\obj\Debug\Info.baml
