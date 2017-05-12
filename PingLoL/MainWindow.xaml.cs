@@ -57,14 +57,22 @@ namespace PingLoL
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string Ping;
-
+            int numPing = 8;
             ComboBox cB = sender as ComboBox;
             string Region = this.cBox.SelectedValue.ToString();
             //this.Title = Region;
 
             SendPing SP = new SendPing(Region);
             Ping = SP.SenderPing(Region);
+            string[] PingsTotal = SP.SendersPings(Region, numPing);
+            this.tBlockMS.Text = Ping;
+            this.tBlockAvg.Text = PingsTotal[0] + " ms";
+            this.tBlockMax.Text = PingsTotal[1] + " ms";
+            this.tBlockMin.Text = PingsTotal[2] + " ms";
             int color = SP.ColorType(Ping);
+            int colorAvg = SP.ColorType(PingsTotal[0].ToString());
+            int colorMax = SP.ColorType(PingsTotal[1].ToString());
+            int colorMin = SP.ColorType(PingsTotal[2].ToString());
             switch (color)
             {
                 case 1:
@@ -80,9 +88,51 @@ namespace PingLoL
                     this.tBlockMS.Foreground = Brushes.DarkGreen;
                     break;
             }
-            this.tBlockMS.Text = Ping;
-            
-
+            switch (colorAvg)
+            {
+                case 1:
+                    this.tBlockAvg.Foreground = Brushes.DarkGreen;
+                    break;
+                case 2:
+                    this.tBlockAvg.Foreground = Brushes.Orange;
+                    break;
+                case 3:
+                    this.tBlockAvg.Foreground = Brushes.Red;
+                    break;
+                default:
+                    this.tBlockAvg.Foreground = Brushes.DarkGreen;
+                    break;
+            }
+            switch (colorMax)
+            {
+                case 1:
+                    this.tBlockMax.Foreground = Brushes.DarkGreen;
+                    break;
+                case 2:
+                    this.tBlockMax.Foreground = Brushes.Orange;
+                    break;
+                case 3:
+                    this.tBlockMax.Foreground = Brushes.Red;
+                    break;
+                default:
+                    this.tBlockMax.Foreground = Brushes.DarkGreen;
+                    break;
+            }
+            switch (colorMin)
+            {
+                case 1:
+                    this.tBlockMin.Foreground = Brushes.DarkGreen;
+                    break;
+                case 2:
+                    this.tBlockMin.Foreground = Brushes.Orange;
+                    break;
+                case 3:
+                    this.tBlockMin.Foreground = Brushes.Red;
+                    break;
+                default:
+                    this.tBlockMin.Foreground = Brushes.DarkGreen;
+                    break;
+            }
         }
 
         private void TextBlock_Loaded(object sender, RoutedEventArgs e)

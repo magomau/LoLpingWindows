@@ -71,5 +71,47 @@ namespace PingLoL
             }
             return color;
         }
+
+        public string[] SendersPings(string region, int numPing)
+        {
+            bool pingBool = false;
+            string ping = "0 ms";
+            string[] PingTotal = new string[3];
+            string IpAddress;
+            int[] PingsMC = new int[numPing];
+            ServerIdAddreess sIP = new ServerIdAddreess();
+            IpAddress = sIP.SendRealAddress(region);
+            Ping pinger = new Ping();
+            try
+            {
+                for (int i = 0; i < numPing; i++)
+                {
+                    PingReply reply = pinger.Send(IpAddress, 1000);
+                    pingBool = reply.Status == IPStatus.Success;
+                    if (pingBool)
+                    {
+                        string algo = reply.RoundtripTime.ToString();
+                        PingsMC[i] = Int32.Parse(algo);
+                    }
+                    else
+                        i--;
+                }
+            }
+            catch (PingException)
+            {
+                // Discard PingExceptions and return false;
+            }
+            int PingsAvg = (int)PingsMC.Average();
+            int PingsMax = PingsMC.Max();
+            int PingsMin = PingsMC.Min();
+
+            //ping = PingsAvg.ToString() + "," + PingsMax.ToString() + "," + PingsMin.ToString(); 
+            PingTotal[0] = PingsAvg.ToString();
+            PingTotal[1] = PingsMax.ToString();
+            PingTotal[2] = PingsMin.ToString();
+
+            return PingTotal;
+        }
     }
 }
+
